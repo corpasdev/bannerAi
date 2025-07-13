@@ -11,6 +11,7 @@ export const WorkflowLeftPanel: React.FC = () => {
           </div>
           <h1 className="text-xl font-bold text-slate-800">Flashes</h1>
         </div>
+        <p className="text-slate-500">Design your banner in minutes</p>
       </div>
     </div>
   );

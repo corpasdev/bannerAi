@@ -42,7 +42,7 @@ export const RightPanel: React.FC = () => {
         <div className="flex flex-col gap-3 pb-6 border-b border-slate-100">
           <Button 
             disabled
-            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm"
+            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700 !text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm"
           >
             <Download className="w-4 h-4" />
             Export
@@ -161,7 +161,7 @@ export const RightPanel: React.FC = () => {
               Content
             </AccordionTrigger>
             <AccordionContent>
-              <div className="space-y-3 pt-2">
+              <div className="space-y-3 pt-2 px-2">
                 <p className="text-xs text-slate-500">Configure the banner content</p>
                 
                 <Button
@@ -181,7 +181,7 @@ export const RightPanel: React.FC = () => {
               Improve with AI
             </AccordionTrigger>
             <AccordionContent>
-              <div className="space-y-3 pt-2">
+              <div className="space-y-3 pt-2 px-2">
                 <p className="text-xs text-slate-500">Enhance your banner with artificial intelligence</p>
                 
                 <div className="space-y-2">

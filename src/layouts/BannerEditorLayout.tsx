@@ -26,8 +26,7 @@ export const BannerEditorLayout: React.FC = () => {
               <div className="px-8 py-6 border-b border-slate-100">
                 <div className="flex items-center justify-between">
                   <div>
-                    <h2 className="text-2xl font-bold text-slate-800">Canvas</h2>
-                    <p className="text-slate-500">Design your promotional banner</p>
+                    <h2 className="text-2xl font-bold text-slate-800">Untitle</h2>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="px-3 py-1 bg-slate-100 rounded-full text-sm text-slate-600">

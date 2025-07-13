@@ -11,4 +11,7 @@ export * from './ui/textarea';
 export * from './ui/label';
 export * from './ColorPaletteDemo';
 export { default as ContentConfigurationModal } from './ContentConfigurationModal';
-export { default as AIProductGeneratorModal } from './AIProductGeneratorModal'; 
+export { default as AIProductGeneratorModal } from './AIProductGeneratorModal';
+export { Badge } from './ui/badge';
+export { ScrollArea } from './ui/scroll-area';
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from './ui/accordion'; 

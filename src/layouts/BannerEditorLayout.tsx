@@ -1,108 +1,80 @@
 import React from 'react';
-import { LeftPanel } from './LeftPanel';
-import { CentralArea } from './CentralArea';
+import { Card } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { RightPanel } from './RightPanel';
+import { WorkflowLeftPanel } from '../features/banner/components/WorkflowLeftPanel';
 
 export const BannerEditorLayout: React.FC = () => {
   return (
-    <div 
-      className="text-corporate-white" 
-      style={{ 
-        width: '100%', 
-        height: '100%',
-        padding: '8px',
-        boxSizing: 'border-box',
-        overflow: 'hidden'
-      }}
-    >
-      {/* Main container with modern design */}
-      <div 
-        className="border border-corporate-light rounded-xl bg-page-primary" 
-        style={{ 
-          width: '100%', 
-          height: '100%',
-          padding: '0',
-          boxSizing: 'border-box',
-          overflow: 'hidden',
-          boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)'
-        }}
-      >
-        {/* Top Header Bar */}
-        <div 
-          className="border-b border-corporate-light"
-          style={{
-            height: '60px',
-            padding: '0 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-          }}
-        >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <div className="w-8 h-8 bg-corporate-primary rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">F</span>
+    <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100/50 p-4">
+      {/* Main Three-Panel Layout */}
+      <div className="flex gap-6 h-[calc(100vh-32px)]">
+        
+        {/* Left Sidebar - Workflow Tools */}
+        <div className="w-80 flex-shrink-0">
+          <Card className="h-full border-0 shadow-lg bg-white/95 backdrop-blur-sm">
+            <div className="h-full overflow-hidden">
+              <WorkflowLeftPanel />
             </div>
-            <span className="text-white font-semibold text-lg">Flashes</span>
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <button className="btn-corporate-outline px-4 py-2 text-xs">
-              Templates
-            </button>
-            <button className="btn-corporate-primary px-4 py-2 text-xs">
-              Export
-            </button>
-          </div>
+          </Card>
         </div>
 
-        {/* Main Content Area */}
-        <div 
-          style={{ 
-            height: 'calc(100% - 60px)',
-            display: 'flex',
-            overflow: 'hidden'
-          }}
-        >
-          {/* Left Sidebar - Compact */}
-          <div 
-            className="bg-section-secondary border-r border-corporate-light" 
-            style={{ 
-              width: '280px',
-              height: '100%',
-              padding: '24px 16px',
-              overflow: 'hidden',
-              flexShrink: 0
-            }}
-          >
-            <LeftPanel />
-          </div>
-          
-          {/* Central Work Area - Expanded */}
-          <div 
-            className="bg-page-primary flex-1" 
-            style={{ 
-              height: '100%',
-              padding: '24px',
-              overflow: 'hidden',
-              position: 'relative'
-            }}
-          >
-            <CentralArea />
-          </div>
-          
-          {/* Right Sidebar - Compact */}
-          <div 
-            className="bg-section-secondary border-l border-corporate-light" 
-            style={{ 
-              width: '280px',
-              height: '100%',
-              padding: '24px 16px',
-              overflow: 'hidden',
-              flexShrink: 0
-            }}
-          >
-            <RightPanel />
-          </div>
+        {/* Center Workspace - Main Editing Area */}
+        <div className="flex-1 flex flex-col">
+          <Card className="flex-1 border-0 shadow-xl bg-white/95 backdrop-blur-sm">
+            <div className="h-full flex flex-col">
+              <div className="px-8 py-6 border-b border-slate-100">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h2 className="text-2xl font-bold text-slate-800">Canvas</h2>
+                    <p className="text-slate-500">Design your promotional banner</p>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <div className="px-3 py-1 bg-slate-100 rounded-full text-sm text-slate-600">
+                      800 × 400px
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex-1 p-8">
+                <div className="h-full flex items-center justify-center">
+                  {/* Canvas Container with Modern Styling */}
+                  <div className="relative">
+                    <Card className="w-[800px] h-[400px] border-2 border-dashed border-slate-200 bg-white shadow-2xl">
+                      <div className="w-full h-full flex items-center justify-center rounded-xl">
+                        <div className="text-center">
+                          <Button 
+                            variant="outline" 
+                            className="mb-4 px-6 py-3 text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-all duration-200 border-2 border-slate-300 hover:border-slate-400"
+                          >
+                            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                            </svg>
+                            Templates
+                          </Button>
+                          <h3 className="text-lg font-semibold text-slate-700 mb-2">Start Creating</h3>
+                          <p className="text-slate-500 max-w-sm">Begin by selecting the number of columns for your banner layout</p>
+                        </div>
+                      </div>
+                    </Card>
+                    
+                    {/* Canvas Shadow Enhancement */}
+                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl blur-xl -z-10"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        {/* Right Sidebar - Tools & Export */}
+        <div className="w-80 flex-shrink-0">
+          <Card className="h-full border-0 shadow-lg bg-white/95 backdrop-blur-sm">
+            <div className="h-full overflow-hidden">
+              <RightPanel />
+            </div>
+          </Card>
         </div>
       </div>
     </div>

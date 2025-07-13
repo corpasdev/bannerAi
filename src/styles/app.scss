@@ -1,8 +1,9 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 .logo {
@@ -39,4 +40,330 @@
 
 .read-the-docs {
   color: #888;
+}
+
+// Content Configuration Modal Styles
+.content-configuration-modal {
+  .modal-header {
+    text-align: center;
+    
+    .settings-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #3B82F6, #1E40AF);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+      
+      svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+      }
+    }
+  }
+
+  .form-section {
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      
+      label {
+        font-weight: 500;
+        font-size: 14px;
+        color: #374151;
+      }
+      
+      input, select, textarea {
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        
+        &:focus {
+          border-color: #3B82F6;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+      }
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #E5E7EB;
+    
+    button {
+      padding: 8px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      
+      &.cancel-btn {
+        background: white;
+        border: 1px solid #D1D5DB;
+        color: #6B7280;
+        
+        &:hover {
+          background: #F9FAFB;
+          border-color: #9CA3AF;
+        }
+      }
+      
+      &.save-btn {
+        background: linear-gradient(135deg, #3B82F6, #1E40AF);
+        color: white;
+        border: none;
+        
+        &:hover {
+          background: linear-gradient(135deg, #1E40AF, #1E3A8A);
+          transform: translateY(-1px);
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+      }
+    }
+  }
+}
+
+// Dialog overlay styles
+[data-radix-dialog-overlay] {
+  background: rgba(0, 0, 0, 0.7) !important;
+  backdrop-filter: blur(4px);
+}
+
+// Dialog content styles
+[data-radix-dialog-content] {
+  background: white !important;
+  border-radius: 12px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+}
+
+// Select dropdown styles
+[data-radix-select-content] {
+  background: white !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+  z-index: 9999 !important;
+}
+
+[data-radix-select-item] {
+  background: white !important;
+  color: #374151 !important;
+  
+  &:hover, &[data-highlighted] {
+    background: #f3f4f6 !important;
+    color: #111827 !important;
+  }
+  
+  &[data-state="checked"] {
+    background: #dbeafe !important;
+    color: #1e40af !important;
+  }
+}
+
+[data-radix-select-viewport] {
+  background: white !important;
+}
+
+// Right Panel Content Configuration Button
+.content-config-button {
+  background: linear-gradient(135deg, #3B82F6, #1E40AF) !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  color: white !important;
+  transition: all 0.2s ease !important;
+  
+  &:hover {
+    background: linear-gradient(135deg, #1E40AF, #1E3A8A) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  }
+  
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// AI Enhancement Section Styles
+.ai-section {
+  h3 {
+    color: #374151;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+  
+  .ai-description {
+    color: #9CA3AF;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .ai-button {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+    border-radius: 9999px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px 16px;
+    transition: all 0.2s ease;
+    
+    &.optimize-copy {
+      background: linear-gradient(135deg, #10B981, #059669) !important;
+      color: white !important;
+      border: none !important;
+      
+      &:hover {
+        background: linear-gradient(135deg, #059669, #047857) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+    }
+    
+    &.generate-product {
+      background: linear-gradient(135deg, #A855F7, #9333EA) !important;
+      color: white !important;
+      border: none !important;
+      
+      &:hover {
+        background: linear-gradient(135deg, #9333EA, #7C3AED) !important;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+      }
+    }
+    
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+
+
+// AI Product Generator Modal Styles
+.ai-product-modal {
+  .modal-header {
+    text-align: center;
+    
+    .ai-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #A855F7, #9333EA);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+      
+      svg {
+        width: 24px;
+        height: 24px;
+        color: white;
+      }
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    
+    label {
+      font-weight: 500;
+      font-size: 14px;
+      color: #374151;
+    }
+    
+    input, select, textarea {
+      background: white;
+      border: 1px solid #D1D5DB;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 14px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      
+      &:focus {
+        outline: none;
+        border-color: #A855F7;
+        box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.1);
+      }
+      
+      &::placeholder {
+        color: #9CA3AF;
+      }
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #E5E7EB;
+    
+    .cancel-btn {
+      background: white;
+      border: 1px solid #D1D5DB;
+      color: #6B7280;
+      padding: 8px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      
+      &:hover {
+        background: #F9FAFB;
+        border-color: #9CA3AF;
+      }
+    }
+    
+    .generate-btn {
+      background: linear-gradient(135deg, #A855F7, #9333EA);
+      color: white;
+      border: none;
+      padding: 8px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      
+      &:hover:not(:disabled) {
+        background: linear-gradient(135deg, #9333EA, #7C3AED);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+      }
+      
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
 }

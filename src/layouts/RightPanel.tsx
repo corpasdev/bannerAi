@@ -41,7 +41,8 @@ export const RightPanel: React.FC = () => {
         {/* Action Buttons - Outside Accordion */}
         <div className="flex flex-col gap-3 pb-6 border-b border-slate-100">
           <Button 
-            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700  hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm !text-white"
+            disabled
+            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm"
           >
             <Download className="w-4 h-4" />
             Export
@@ -161,14 +162,14 @@ export const RightPanel: React.FC = () => {
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 pt-2">
-                <p className="text-xs text-slate-500">Configura el contenido del banner</p>
+                <p className="text-xs text-slate-500">Configure the banner content</p>
                 
                 <Button
                   onClick={() => setIsContentModalOpen(true)}
                   className="w-full justify-start gap-2 bg-gradient-to-r from-blue-500 to-blue-600 !text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm rounded-full"
                 >
                   <Settings className="w-4 h-4" />
-                  Configurar Contenido
+                  Configure content
                 </Button>
               </div>
             </AccordionContent>

@@ -41,7 +41,7 @@ export const RightPanel: React.FC = () => {
         {/* Action Buttons - Outside Accordion */}
         <div className="flex flex-col gap-3 pb-6 border-b border-slate-100">
           <Button 
-            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm"
+            className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700  hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm !text-white"
           >
             <Download className="w-4 h-4" />
             Export
@@ -49,8 +49,9 @@ export const RightPanel: React.FC = () => {
         </div>
 
         <Accordion 
-          type="multiple" 
-          defaultValue={["layout", "background", "content", "ai"]}
+          type="single" 
+          collapsible
+          defaultValue="layout"
           className="w-full space-y-0"
         >
           {/* Layout Section */}
@@ -156,7 +157,7 @@ export const RightPanel: React.FC = () => {
           {/* Content Section */}
           <AccordionItem value="content" className="border-b border-slate-100 pb-4 accordion-item-enhanced">
             <AccordionTrigger className="text-sm font-medium text-slate-700 hover:text-slate-900 hover:no-underline py-3">
-              Contenido
+              Content
             </AccordionTrigger>
             <AccordionContent>
               <div className="space-y-3 pt-2">
@@ -164,7 +165,7 @@ export const RightPanel: React.FC = () => {
                 
                 <Button
                   onClick={() => setIsContentModalOpen(true)}
-                  className="w-full justify-start gap-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm rounded-full"
+                  className="w-full justify-start gap-2 bg-gradient-to-r from-blue-500 to-blue-600 !text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm rounded-full"
                 >
                   <Settings className="w-4 h-4" />
                   Configurar Contenido
@@ -185,7 +186,7 @@ export const RightPanel: React.FC = () => {
                 <div className="space-y-2">
                   <Button
                     onClick={handleOptimizeCopy}
-                    className="w-full justify-start gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-sm rounded-full"
+                    className="w-full justify-start gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-sm rounded-full"
                   >
                     <FileText className="w-4 h-4" />
                     Optimize Copy with AI
@@ -193,7 +194,7 @@ export const RightPanel: React.FC = () => {
                   
                   <Button
                     onClick={() => setIsAIProductModalOpen(true)}
-                    className="w-full justify-start gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-sm rounded-full"
+                    className="w-full justify-start gap-2 bg-gradient-to-r from-purple-500 to-purple-600 !text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-sm rounded-full"
                   >
                     <Wand2 className="w-4 h-4" />
                     Generate Product with AI

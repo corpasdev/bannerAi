@@ -1,0 +1,316 @@
+// 🎨 PROFESSIONAL CORPORATE THEME CLASSES
+// Implementation of the Professional Color Palette Guide
+// Colors: #27005D (Primary Dark), #9400FF (Vibrant Accent), #AED2FF (Secondary BG), #E4F1FF (Main BG)
+
+@use './variables.scss' as vars;
+
+// === SEMANTIC BACKGROUND CLASSES ===
+// Following the professional usage guide recommendations
+
+// Main page backgrounds - #E4F1FF
+.bg-page-primary,
+.bg-corporate-ultra-light {
+  background-color: var(--color-ultra-light); // Global page background, forms, content sections
+}
+
+// Section/card backgrounds - #AED2FF  
+.bg-section-secondary,
+.bg-corporate-light {
+  background-color: var(--color-light); // Cards, secondary containers, side panels
+}
+
+// Navigation/header backgrounds - #27005D
+.bg-navbar,
+.bg-header,
+.bg-corporate-secondary {
+  background-color: var(--color-secondary); // Navigation bars, headers, footer
+}
+
+// Accent/interactive backgrounds - #9400FF
+.bg-accent,
+.bg-corporate-primary {
+  background-color: var(--color-primary); // CTA buttons, active states, highlights
+}
+
+// === PROFESSIONAL LAYOUT COMPONENTS ===
+
+// Navbar styling (Primary Dark background)
+.navbar-corporate {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  
+  .nav-link {
+    color: var(--color-ultra-light);
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: var(--color-primary);
+    }
+    
+    &.active {
+      color: var(--color-primary);
+      font-weight: vars.$font-weight-semibold;
+    }
+  }
+}
+
+// Hero section styling
+.hero-corporate {
+  background-color: var(--color-ultra-light);
+  
+  .hero-title {
+    color: var(--color-secondary);
+    font-weight: vars.$font-weight-bold;
+  }
+  
+  .hero-subtitle {
+    color: rgba(39, 0, 93, 0.8);
+  }
+  
+  .hero-cta {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    
+    &:hover {
+      background-color: var(--color-secondary);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Card components with alternating backgrounds
+.card-corporate {
+  background-color: var(--color-light);
+  border: 1px solid rgba(174, 210, 255, 0.5);
+  border-radius: vars.$border-radius-lg;
+  box-shadow: vars.$shadow-sm;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: vars.$shadow-lg;
+    transform: translateY(-1px);
+  }
+  
+  .card-title {
+    color: var(--color-secondary);
+    font-weight: vars.$font-weight-semibold;
+  }
+  
+  .card-content {
+    color: rgba(39, 0, 93, 0.8);
+  }
+  
+  // Alternate card styling for visual variety
+  &.card-alternate {
+    background-color: var(--color-ultra-light);
+  }
+}
+
+// === ENHANCED BUTTON SYSTEM ===
+
+// Primary CTA buttons (Vibrant Accent)
+.btn-primary-corporate,
+button.btn-corporate-primary {
+  background-color: var(--color-primary) !important;
+  color: var(--color-white) !important;
+  border: 1px solid var(--color-primary) !important;
+  font-weight: vars.$font-weight-semibold;
+  padding: vars.$spacing-sm vars.$spacing-lg;
+  border-radius: vars.$border-radius-base;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  
+  &:hover {
+    background-color: var(--color-secondary) !important;
+    border-color: var(--color-secondary) !important;
+    transform: translateY(-1px);
+    box-shadow: vars.$shadow-base !important;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Secondary buttons (Primary Dark)
+.btn-secondary-corporate,
+button.btn-corporate-secondary {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-white) !important;
+  border: 1px solid var(--color-secondary) !important;
+  font-weight: vars.$font-weight-medium;
+  padding: vars.$spacing-sm vars.$spacing-lg;
+  border-radius: vars.$border-radius-base;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  
+  &:hover {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+  }
+}
+
+// Outline buttons for subtle actions
+.btn-outline-corporate,
+button.btn-corporate-outline {
+  background-color: transparent !important;
+  color: var(--color-secondary) !important;
+  border: 1px solid var(--color-light) !important;
+  font-weight: vars.$font-weight-medium;
+  padding: vars.$spacing-sm vars.$spacing-lg;
+  border-radius: vars.$border-radius-base;
+  transition: all 0.2s ease;
+  box-shadow: none !important;
+  
+  &:hover {
+    background-color: rgba(174, 210, 255, 0.2) !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+  }
+}
+
+// === TEXT COLORS WITH SEMANTIC MEANING ===
+
+// Primary text for headings and important content
+.text-primary-corporate,
+.text-corporate-secondary {
+  color: var(--color-secondary); // #27005D for strong visual impact
+}
+
+// Accent text for interactive elements
+.text-accent-corporate,
+.text-corporate-primary {
+  color: var(--color-primary); // #9400FF for highlights and links
+}
+
+// Light text for dark backgrounds
+.text-light-corporate,
+.text-corporate-light {
+  color: var(--color-light); // #AED2FF for text on dark backgrounds
+}
+
+// Ultra light text for subtle content
+.text-muted-corporate,
+.text-corporate-ultra-light {
+  color: var(--color-ultra-light); // #E4F1FF for very subtle text
+}
+
+.text-corporate-white {
+  color: var(--color-white);
+}
+
+// === INTERACTIVE STATES ===
+
+// Links with proper hover states
+.link-corporate {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: vars.$font-weight-medium;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-primary);
+  }
+}
+
+// Interactive elements with corporate styling
+.interactive-corporate {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  
+  &:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(148, 0, 255, 0.05);
+    transform: translateY(-1px);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Active/selected states
+.active-corporate {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  font-weight: vars.$font-weight-semibold;
+}
+
+// === BORDERS AND DIVIDERS ===
+
+.border-corporate-primary {
+  border-color: var(--color-primary);
+}
+
+.border-corporate-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-corporate-light {
+  border-color: var(--color-light);
+}
+
+.border-corporate-ultra-light {
+  border-color: var(--color-ultra-light);
+}
+
+// Divider line
+.divider-corporate {
+  height: 1px;
+  background-color: var(--color-light);
+  border: none;
+  margin: vars.$spacing-lg 0;
+}
+
+// === FOOTER STYLING ===
+.footer-corporate {
+  background-color: var(--color-secondary);
+  color: var(--color-ultra-light);
+  
+  .footer-link {
+    color: var(--color-light);
+    
+    &:hover {
+      color: var(--color-primary);
+    }
+  }
+}
+
+// === ACCESSIBILITY ENHANCEMENTS ===
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  .btn-corporate-primary {
+    border-width: 2px !important;
+  }
+  
+  .btn-corporate-outline {
+    border-width: 2px !important;
+  }
+}
+
+// Focus states for keyboard navigation
+.btn-corporate-primary:focus,
+.btn-corporate-secondary:focus,
+.btn-corporate-outline:focus,
+.interactive-corporate:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+// === ALPHA VARIANTS ===
+.bg-corporate-primary-alpha {
+  background-color: rgba(148, 0, 255, 0.1);
+}
+
+.bg-corporate-secondary-alpha {
+  background-color: rgba(39, 0, 93, 0.1);
+}
+
+.bg-corporate-light-alpha {
+  background-color: rgba(174, 210, 255, 0.2);
+} 

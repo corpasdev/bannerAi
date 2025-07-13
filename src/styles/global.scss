@@ -1,0 +1,227 @@
+@use './variables.scss' as vars;
+
+:root {
+  // 🎨 PROFESSIONAL CORPORATE COLORS
+  // Primary palette from professional UI/UX guide
+  --color-primary: #{vars.$primary};                    // #9400FF - Vibrant Accent Color
+  --color-secondary: #{vars.$primary-dark};             // #27005D - Primary Dark Color  
+  --color-light: #{vars.$light};                        // #AED2FF - Secondary Background Color
+  --color-ultra-light: #{vars.$ultra-light};            // #E4F1FF - Main Background Color
+  
+  // Semantic color mapping for better component development
+  --color-brand-primary: #{vars.$color-brand-primary};
+  --color-brand-secondary: #{vars.$color-brand-secondary};
+  --color-background-primary: #{vars.$color-background-primary};
+  --color-background-secondary: #{vars.$color-background-secondary};
+  --color-accent: #{vars.$color-accent};
+  --color-surface: #{vars.$color-surface};
+  --color-text-primary: #{vars.$color-text-primary};
+  --color-text-accent: #{vars.$color-text-accent};
+  
+  // Hover states for better interactivity
+  --color-primary-hover: #{vars.$primary-hover};
+  --color-secondary-hover: #{vars.$primary-dark-hover};
+  --color-light-hover: #{vars.$light-hover};
+  
+  // Essential neutrals
+  --color-white: #{vars.$white};
+  --color-black: #{vars.$black};
+  
+  --font-family-sans: #{vars.$font-family-sans};
+  --font-family-mono: #{vars.$font-family-mono};
+  
+  font-family: var(--font-family-sans);
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-normal};
+  
+  color-scheme: light;
+  color: var(--color-text-primary);
+  background-color: var(--color-background-primary);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Professional link styling following the guide
+a {
+  font-weight: #{vars.$font-weight-medium};
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    color: var(--color-text-primary);
+    text-decoration: underline;
+    text-decoration-color: var(--color-accent);
+  }
+  
+  &:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color-background-primary); // Main background (#E4F1FF)
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Enhanced wireframe layout with professional styling */
+.wireframe-layout {
+  &__grid {
+    box-shadow: vars.$shadow-base;
+    background-color: var(--color-background-primary);
+  }
+  
+  &__panel {
+    background-color: var(--color-surface);
+    border: 1px solid rgba(174, 210, 255, 0.3);
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: var(--color-light-hover);
+      border-color: var(--color-accent);
+      box-shadow: vars.$shadow-sm;
+    }
+  }
+  
+  &__button {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    border: 1px solid var(--color-accent);
+    transition: all 0.2s ease-in-out;
+    
+    &:hover {
+      background-color: var(--color-brand-secondary);
+      transform: translateY(-1px);
+      box-shadow: vars.$shadow-base;
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// Professional typography with proper color usage
+h1 {
+  font-size: #{vars.$font-size-5xl};
+  line-height: #{vars.$line-height-tight};
+  font-weight: #{vars.$font-weight-bold};
+  color: var(--color-text-primary); // #27005D for strong visual impact
+}
+
+h2 {
+  font-size: #{vars.$font-size-4xl};
+  line-height: #{vars.$line-height-tight};
+  font-weight: #{vars.$font-weight-semibold};
+  color: var(--color-text-primary);
+}
+
+h3 {
+  font-size: #{vars.$font-size-3xl};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-semibold};
+  color: var(--color-text-primary);
+}
+
+h4 {
+  font-size: #{vars.$font-size-2xl};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-medium};
+  color: var(--color-text-primary);
+}
+
+h5 {
+  font-size: #{vars.$font-size-xl};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-medium};
+  color: var(--color-text-primary);
+}
+
+h6 {
+  font-size: #{vars.$font-size-lg};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-medium};
+  color: var(--color-text-primary);
+}
+
+// Enhanced button styling following professional guidelines
+button {
+  border-radius: #{vars.$border-radius-base};
+  border: 1px solid transparent;
+  padding: #{vars.$spacing-sm} #{vars.$spacing-base};
+  font-size: #{vars.$font-size-base};
+  font-weight: #{vars.$font-weight-medium};
+  font-family: inherit;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-light-hover);
+    transform: translateY(-1px);
+  }
+  
+  &:focus,
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Remove light mode overrides since we're using a professional light theme
+// The professional palette is designed for light interfaces
+
+// Professional form elements
+input, textarea, select {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-light);
+  color: var(--color-text-primary);
+  border-radius: #{vars.$border-radius-base};
+  padding: #{vars.$spacing-sm};
+  transition: all 0.2s ease;
+  
+  &:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(148, 0, 255, 0.1);
+  }
+}
+
+// Professional scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-light);
+  border-radius: #{vars.$border-radius-full};
+  
+  &:hover {
+    background: var(--color-accent);
+  }
+}

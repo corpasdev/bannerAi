@@ -1,0 +1,117 @@
+// 🎨 PROFESSIONAL COLOR PALETTE - UI/UX OPTIMIZED
+// Based on professional color guide for modern web interfaces
+
+// === PRIMARY PALETTE ===
+// Primary Dark Color - #27005D (rgb(39, 0, 93))
+// Usage: Headings, navigation bars, footer, primary buttons hover states, highlighted text
+$primary-dark: #27005D;
+$secondary: #27005D;      // Backwards compatibility
+
+// Vibrant Accent Color - #9400FF (rgb(148, 0, 255))  
+// Usage: Interactive elements, CTA buttons, active links, progress bars, badges, highlights
+$primary: #9400FF;
+
+// Secondary Background Color - #AED2FF (rgb(174, 210, 255))
+// Usage: Section backgrounds, cards, containers, side panels, borders, dividers
+$light: #AED2FF;
+
+// Main Background Color - #E4F1FF (rgb(228, 241, 255))
+// Usage: Global page background, forms, content sections, clean modern aesthetic
+$ultra-light: #E4F1FF;
+
+// === SEMANTIC COLOR MAPPING ===
+// For better component development and usage clarity
+$color-brand-primary: $primary;           // #9400FF - Main brand color
+$color-brand-secondary: $primary-dark;    // #27005D - Secondary brand color
+$color-background-primary: $ultra-light;  // #E4F1FF - Main backgrounds
+$color-background-secondary: $light;      // #AED2FF - Secondary backgrounds
+$color-accent: $primary;                  // #9400FF - Interactive accents
+$color-surface: $light;                   // #AED2FF - Card/panel surfaces
+$color-text-primary: $primary-dark;       // #27005D - Primary text
+$color-text-accent: $primary;             // #9400FF - Accent text
+
+// === ACCESSIBILITY VARIATIONS ===
+// Enhanced contrast variations for WCAG compliance
+$primary-hover: darken($primary, 10%);           // Darker accent for hover states
+$primary-dark-hover: darken($primary-dark, 5%); // Subtle hover for dark elements
+$light-hover: darken($light, 8%);               // Hover state for light elements
+
+// Essential neutrals only
+$white: #ffffff;
+$black: #000000;
+
+// === ALPHA VARIATIONS ===
+// For overlays and subtle backgrounds
+$primary-alpha-10: rgba(148, 0, 255, 0.1);      // Light accent overlay
+$primary-alpha-20: rgba(148, 0, 255, 0.2);      // Medium accent overlay
+$primary-dark-alpha-10: rgba(39, 0, 93, 0.1);   // Light dark overlay
+$primary-dark-alpha-30: rgba(39, 0, 93, 0.3);   // Medium dark overlay
+$light-alpha-20: rgba(174, 210, 255, 0.2);      // Light blue overlay
+
+// Typography
+$font-family-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-family-mono: 'Fira Code', 'Monaco', 'Consolas', 'Ubuntu Mono', monospace;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+$font-size-3xl: 1.875rem;
+$font-size-4xl: 2.25rem;
+$font-size-5xl: 3rem;
+$font-size-6xl: 3.75rem;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+$line-height-tight: 1.25;
+$line-height-normal: 1.5;
+$line-height-relaxed: 1.75;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-base: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-2xl: 3rem;
+$spacing-3xl: 4rem;
+$spacing-4xl: 6rem;
+$spacing-5xl: 8rem;
+
+// Border radius
+$border-radius-sm: 0.25rem;
+$border-radius-base: 0.5rem;
+$border-radius-lg: 0.75rem;
+$border-radius-xl: 1rem;
+$border-radius-2xl: 1.5rem;
+$border-radius-full: 9999px;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+$shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070; 

@@ -1,0 +1,227 @@
+@use './variables.scss' as vars;
+
+// Responsive breakpoints
+@mixin screen-sm {
+  @media (min-width: #{vars.$breakpoint-sm}) {
+    @content;
+  }
+}
+
+@mixin screen-md {
+  @media (min-width: #{vars.$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin screen-lg {
+  @media (min-width: #{vars.$breakpoint-lg}) {
+    @content;
+  }
+}
+
+@mixin screen-xl {
+  @media (min-width: #{vars.$breakpoint-xl}) {
+    @content;
+  }
+}
+
+@mixin screen-2xl {
+  @media (min-width: #{vars.$breakpoint-2xl}) {
+    @content;
+  }
+}
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+// Typography
+@mixin heading-1 {
+  font-size: #{vars.$font-size-5xl};
+  line-height: #{vars.$line-height-tight};
+  font-weight: #{vars.$font-weight-bold};
+}
+
+@mixin heading-2 {
+  font-size: #{vars.$font-size-4xl};
+  line-height: #{vars.$line-height-tight};
+  font-weight: #{vars.$font-weight-semibold};
+}
+
+@mixin heading-3 {
+  font-size: #{vars.$font-size-3xl};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-semibold};
+}
+
+@mixin body-large {
+  font-size: #{vars.$font-size-lg};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-normal};
+}
+
+@mixin body-small {
+  font-size: #{vars.$font-size-sm};
+  line-height: #{vars.$line-height-normal};
+  font-weight: #{vars.$font-weight-normal};
+}
+
+// Button styles
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: #{vars.$border-radius-base};
+  font-size: #{vars.$font-size-base};
+  font-weight: #{vars.$font-weight-medium};
+  line-height: #{vars.$line-height-tight};
+  padding: #{vars.$spacing-sm} #{vars.$spacing-base};
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: #{vars.$primary};
+  color: #{vars.$white};
+  
+  &:hover:not(:disabled) {
+    background-color: #{vars.$primary-hover};
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px #{vars.$primary-light};
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: #{vars.$secondary};
+  color: #{vars.$white};
+  
+  &:hover:not(:disabled) {
+    background-color: #{vars.$secondary-hover};
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px #{vars.$secondary-light};
+  }
+}
+
+@mixin button-outline {
+  @include button-base;
+  background-color: transparent;
+  color: #{vars.$primary};
+  border: 1px solid #{vars.$primary};
+  
+  &:hover:not(:disabled) {
+    background-color: #{vars.$primary};
+    color: #{vars.$white};
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 2px #{vars.$primary-light};
+  }
+}
+
+// Card styles
+@mixin card {
+  background-color: #{vars.$white};
+  border-radius: #{vars.$border-radius-lg};
+  box-shadow: #{vars.$shadow-base};
+  padding: #{vars.$spacing-lg};
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #{vars.$gray-800};
+    color: #{vars.$white};
+  }
+}
+
+// Form styles
+@mixin form-input {
+  width: 100%;
+  padding: #{vars.$spacing-sm} #{vars.$spacing-base};
+  border: 1px solid #{vars.$gray-300};
+  border-radius: #{vars.$border-radius-base};
+  font-size: #{vars.$font-size-base};
+  line-height: #{vars.$line-height-normal};
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  
+  &:focus {
+    outline: none;
+    border-color: #{vars.$primary};
+    box-shadow: 0 0 0 2px #{vars.$primary-light};
+  }
+  
+  &:disabled {
+    background-color: #{vars.$gray-100};
+    cursor: not-allowed;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    background-color: #{vars.$gray-700};
+    border-color: #{vars.$gray-600};
+    color: #{vars.$white};
+    
+    &:focus {
+      border-color: #{vars.$primary};
+      box-shadow: 0 0 0 2px #{vars.$primary-dark};
+    }
+  }
+}
+
+// Utility mixins
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+} 

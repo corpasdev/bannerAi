@@ -18,6 +18,10 @@ export const BannerEditorLayout: React.FC = () => {
   const [tempWidth, setTempWidth] = useState('');
   const [tempHeight, setTempHeight] = useState('');
   const [isDimensionPopoverOpen, setIsDimensionPopoverOpen] = useState(false);
+  
+  // Estado para el workflow del stepper
+  const [currentStep, setCurrentStep] = useState(0);
+  const totalSteps = 4;
 
   const handleEditTitle = () => {
     setTempTitle(projectTitle);
@@ -85,7 +89,10 @@ export const BannerEditorLayout: React.FC = () => {
         <div className="w-80 flex-shrink-0">
           <Card className="h-full border-0 shadow-lg bg-white/95 backdrop-blur-sm">
             <div className="h-full overflow-hidden">
-              <WorkflowLeftPanel />
+              <WorkflowLeftPanel 
+                currentStep={currentStep}
+                onStepChange={setCurrentStep}
+              />
             </div>
           </Card>
         </div>
@@ -94,7 +101,7 @@ export const BannerEditorLayout: React.FC = () => {
         <div className="flex-1 flex flex-col">
           <Card className="flex-1 border-0 shadow-xl bg-white/95 backdrop-blur-sm">
             <div className="h-full flex flex-col">
-              <div className="px-8 py-6 border-b border-slate-100">
+              <div className="px-8 py-6 border-b border-slate-100 min-h-[100px]">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <h2 className="text-2xl font-bold text-slate-800">{projectTitle}</h2>
@@ -252,7 +259,10 @@ export const BannerEditorLayout: React.FC = () => {
         <div className="w-80 flex-shrink-0">
           <Card className="h-full border-0 shadow-lg bg-white/95 backdrop-blur-sm">
             <div className="h-full overflow-hidden">
-              <RightPanel />
+              <RightPanel 
+                currentStep={currentStep}
+                totalSteps={totalSteps}
+              />
             </div>
           </Card>
         </div>

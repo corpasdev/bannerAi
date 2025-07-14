@@ -1,11 +1,9 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
-import { Badge } from './badge';
 import { CheckCircle } from 'lucide-react';
 
 interface StepperProps {
   steps: StepperStep[];
-  currentStep: number;
   orientation?: 'vertical' | 'horizontal';
   className?: string;
 }
@@ -19,7 +17,6 @@ interface StepperStep {
 
 export const Stepper: React.FC<StepperProps> = ({
   steps,
-  currentStep,
   orientation = 'vertical',
   className,
 }) => {
@@ -36,8 +33,8 @@ export const Stepper: React.FC<StepperProps> = ({
             key={step.id}
             className={cn(
               'step-item',
-              isVertical ? 'flex gap-3' : 'flex flex-col items-center',
-              index === steps.length - 1 ? '' : isVertical ? 'pb-6' : 'pr-6'
+              isVertical ? 'flex gap-4' : 'flex flex-col items-center',
+              index === steps.length - 1 ? '' : isVertical ? 'pb-8' : 'pr-6'
             )}
           >
             {/* Step Indicator */}
@@ -66,7 +63,7 @@ export const Stepper: React.FC<StepperProps> = ({
                   className={cn(
                     'connector-line',
                     isVertical 
-                      ? 'w-0.5 h-6 mt-2' 
+                      ? 'w-0.5 h-8 mt-3' 
                       : 'h-0.5 w-6 ml-2',
                     step.status === 'completed' 
                       ? 'bg-green-500' 

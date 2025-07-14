@@ -1,15 +1,23 @@
 /* Stepper Component Styles */
 .stepper-workflow {
   position: relative;
+  padding: 1rem 0;
 }
 
 .stepper-workflow .step-item {
   position: relative;
+  margin-bottom: 2rem;
+}
+
+.stepper-workflow .step-item:last-child {
+  margin-bottom: 0;
 }
 
 .stepper-workflow .step-indicator {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .stepper-workflow .step-indicator:hover {
@@ -22,21 +30,26 @@
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.3s ease;
+  height: 2rem !important;
 }
 
 .stepper-workflow .step-content {
   margin-top: 4px;
+  min-height: 3rem;
+  padding-right: 1rem;
 }
 
 .stepper-workflow .step-title {
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 2px;
+  margin-bottom: 6px;
+  font-size: 14px;
 }
 
 .stepper-workflow .step-description {
-  line-height: 1.3;
+  line-height: 1.4;
   color: #64748b;
+  font-size: 12px;
 }
 
 /* Animation for step transitions */
@@ -54,6 +67,30 @@
   100% {
     box-shadow: 0 0 0 0 rgba(147, 51, 234, 0);
   }
+}
+
+/* Scroll container styles */
+.stepper-workflow-container {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 #f1f5f9;
+}
+
+.stepper-workflow-container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.stepper-workflow-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.stepper-workflow-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.stepper-workflow-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
 }
 
 /* Responsive adjustments */

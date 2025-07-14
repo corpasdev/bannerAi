@@ -45,37 +45,40 @@ export const WorkflowLeftPanel: React.FC = () => {
       </div>
 
       {/* Workflow Steps */}
-      <div className="flex-1 p-6">
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-slate-800 mb-2">Banner Creation Workflow</h2>
-          <p className="text-sm text-slate-500">Follow these steps to create your banner</p>
+      <div className="flex-1 flex flex-col overflow-hidden">
+        <div className="p-6 pb-4 flex-shrink-0">
+          <div className="mb-6">
+            <h2 className="text-lg font-semibold text-slate-800 mb-2">Banner Creation Workflow</h2>
+            <p className="text-sm text-slate-500">Follow these steps to create your banner</p>
+          </div>
         </div>
 
-        <Stepper
-          steps={workflowSteps}
-          currentStep={currentStep}
-          orientation="vertical"
-          className="stepper-workflow"
-        />
+        <div className="flex-1 px-6 pb-6 overflow-y-auto stepper-workflow-container">
+          <Stepper
+            steps={workflowSteps}
+            orientation="vertical"
+            className="stepper-workflow"
+          />
 
-        {/* Demo Controls */}
-        <div className="mt-6 p-4 bg-slate-50 rounded-lg">
-          <p className="text-xs text-slate-600 mb-3">Demo Controls:</p>
-          <div className="flex gap-2">
-            <button
-              onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
-              disabled={currentStep === 0}
-              className="px-3 py-1 text-xs bg-slate-200 text-slate-700 rounded hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Previous
-            </button>
-            <button
-              onClick={() => setCurrentStep(Math.min(workflowSteps.length - 1, currentStep + 1))}
-              disabled={currentStep === workflowSteps.length - 1}
-              className="px-3 py-1 text-xs bg-purple-600 text-white rounded hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              Next
-            </button>
+          {/* Demo Controls */}
+          <div className="mt-8 p-4 bg-slate-50 rounded-lg">
+            <p className="text-xs text-slate-600 mb-3">Demo Controls:</p>
+            <div className="flex gap-2">
+              <button
+                onClick={() => setCurrentStep(Math.max(0, currentStep - 1))}
+                disabled={currentStep === 0}
+                className="px-3 py-1 text-xs bg-slate-200 text-slate-700 rounded hover:bg-slate-300 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Previous
+              </button>
+              <button
+                onClick={() => setCurrentStep(Math.min(workflowSteps.length - 1, currentStep + 1))}
+                disabled={currentStep === workflowSteps.length - 1}
+                className="px-3 py-1 text-xs bg-purple-600 text-white rounded hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Next
+              </button>
+            </div>
           </div>
         </div>
       </div>

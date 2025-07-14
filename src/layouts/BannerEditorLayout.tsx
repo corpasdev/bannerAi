@@ -1,10 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Popover, PopoverContent } from '@/components/ui/popover';
 import { RightPanel } from './RightPanel';
 import { WorkflowLeftPanel } from '../features/banner/components/WorkflowLeftPanel';
+import { Edit2, Check, X } from 'lucide-react';
 
 export const BannerEditorLayout: React.FC = () => {
+  const [projectTitle, setProjectTitle] = useState('Untitle');
+  const [tempTitle, setTempTitle] = useState('');
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
+  const handleEditTitle = () => {
+    setTempTitle(projectTitle);
+    setIsPopoverOpen(true);
+  };
+
+  const handleSaveTitle = () => {
+    if (tempTitle.trim()) {
+      setProjectTitle(tempTitle.trim());
+    }
+    setIsPopoverOpen(false);
+  };
+
+  const handleCancelTitle = () => {
+    setTempTitle('');
+    setIsPopoverOpen(false);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSaveTitle();
+    } else if (e.key === 'Escape') {
+      handleCancelTitle();
+    }
+  };
+
   return (
     <div className="w-full h-full bg-gradient-to-br from-slate-50 to-slate-100/50 p-4">
       {/* Main Three-Panel Layout */}
@@ -25,8 +57,58 @@ export const BannerEditorLayout: React.FC = () => {
             <div className="h-full flex flex-col">
               <div className="px-8 py-6 border-b border-slate-100">
                 <div className="flex items-center justify-between">
-                  <div>
-                    <h2 className="text-2xl font-bold text-slate-800">Untitle</h2>
+                  <div className="flex items-center gap-2">
+                    <h2 className="text-2xl font-bold text-slate-800">{projectTitle}</h2>
+                    <Popover 
+                      open={isPopoverOpen}
+                      onOpenChange={setIsPopoverOpen}
+                      trigger={
+                        <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          className="p-1 h-8 w-8 hover:bg-slate-100"
+                          onClick={handleEditTitle}
+                        >
+                          <Edit2 className="h-4 w-4 text-slate-500" />
+                        </Button>
+                      }
+                    >
+                      <PopoverContent className="w-80">
+                        <div className="space-y-4">
+                          <div>
+                            <label className="text-sm font-medium text-slate-700 mb-2 block">
+                              Título del proyecto
+                            </label>
+                                                         <Input
+                               value={tempTitle}
+                               onChange={(e) => setTempTitle(e.target.value)}
+                               onKeyDown={handleKeyDown}
+                               placeholder="Ingrese el título del proyecto"
+                               className="w-full"
+                               autoFocus
+                             />
+                          </div>
+                          <div className="flex justify-end gap-2">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={handleCancelTitle}
+                            >
+                              <X className="h-4 w-4 mr-1" />
+                              Cancelar
+                            </Button>
+                            <Button
+                              size="sm"
+                              onClick={handleSaveTitle}
+                              className="bg-blue-600 hover:bg-blue-700"
+                            >
+                              <Check className="h-4 w-4 mr-1" />
+                              Guardar
+                            </Button>
+                          </div>
+                        </div>
+                      </PopoverContent>
+                    </Popover>
                   </div>
                   <div className="flex items-center gap-3">
                     <div className="px-3 py-1 bg-slate-100 rounded-full text-sm text-slate-600">

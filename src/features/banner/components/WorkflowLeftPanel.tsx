@@ -41,12 +41,13 @@ export const WorkflowLeftPanel: React.FC<WorkflowLeftPanelProps> = ({
   return (
     <div className="h-full flex flex-col">
       {/* Logo */}
-      <div className="p-5 border-b border-slate-100 pt-0 mb-5">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
-            <span className="text-white font-bold text-lg">F</span>
-          </div>
-          <h1 className="text-xl font-bold text-slate-800">Flashes</h1>
+      <div className="p-5 border-b border-slate-100 pt-0 mb-5 min-h-[100px] max-h-[100px]">
+        <div className="w-8/12 overflow-hidden">
+          <img
+            src="/images/logo.png"
+            alt="Flashes logo"
+            className="w-full object-cover"
+          />
         </div>
         <p className="text-slate-500 text-sm">Design your banner in minutes</p>
       </div>

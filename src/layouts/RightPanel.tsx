@@ -163,10 +163,10 @@ export const RightPanel: React.FC = () => {
             <AccordionContent>
               <div className="space-y-3 pt-2 px-2">
                 <p className="text-xs text-slate-500">Configure the banner content</p>
-                
                 <Button
                   onClick={() => setIsContentModalOpen(true)}
-                  className="w-full justify-start gap-2 bg-gradient-to-r from-blue-500 to-blue-600 !text-white hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-sm rounded-full"
+                  variant="outline"
+                  className="w-full justify-start gap-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-all duration-200 border-2 border-slate-300 hover:border-slate-400 shadow-sm rounded-full"
                 >
                   <Settings className="w-4 h-4" />
                   Configure content
@@ -187,7 +187,8 @@ export const RightPanel: React.FC = () => {
                 <div className="space-y-2">
                   <Button
                     onClick={handleOptimizeCopy}
-                    className="w-full justify-start gap-2 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 transition-all duration-200 shadow-sm rounded-full"
+                    variant="outline"
+                    className="w-full justify-start gap-2 text-slate-600 hover:text-slate-800 hover:bg-slate-100 transition-all duration-200 border-2 border-slate-300 hover:border-slate-400 shadow-sm rounded-full"
                   >
                     <FileText className="w-4 h-4" />
                     Optimize Copy with AI
@@ -195,7 +196,7 @@ export const RightPanel: React.FC = () => {
                   
                   <Button
                     onClick={() => setIsAIProductModalOpen(true)}
-                    className="w-full justify-start gap-2 bg-gradient-to-r from-purple-500 to-purple-600 !text-white hover:from-purple-600 hover:to-purple-700 transition-all duration-200 shadow-sm rounded-full"
+                    className="w-full justify-start gap-2 bg-gradient-to-r from-purple-600 to-purple-700 !text-white hover:from-purple-700 hover:to-purple-800 transition-all duration-200 shadow-sm rounded-full"
                   >
                     <Wand2 className="w-4 h-4" />
                     Generate Product with AI
